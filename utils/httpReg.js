@@ -19,7 +19,6 @@ const getWeatherData = async (type, data) => {
       } else {
         url = `${BASE_URL}/forecast?lat=${data.latitude}&lon=${data.longitude}&appid=${API_KEY}&units=metric`;
       }
-
       break;
   }
 
@@ -29,10 +28,10 @@ const getWeatherData = async (type, data) => {
     if (+json.cod === 200) {
       return json;
     } else {
-      showModal(json.message)
+      showModal(json.message);
     }
   } catch (error) {
-    showModal("An error accured when fetching data")
+    showModal("An error accured when fetching data");
   }
 };
 
